@@ -3,10 +3,7 @@
 
 ###3rd place winners of the #WeAgainstVirus hackathon by "Hack the Alps" on 27th-28th March 2020. 
 
-[!weagainstvirus-header-cropped-3.png](We Against Virus)
-
-
-[!weagainstvirus-header-cropped-3.png][We Against virus]
+![We Against Virus](./weagainstvirus-header-cropped-3.png)
 
 Pharmacy queues prototype:
 A simple portal where the local people can visualize the number of customers in the waiting line at a pharmacy.
