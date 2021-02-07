@@ -1,17 +1,23 @@
 # We Against Virus - TJ, DG, FT
+### Authors: Daniele Gadler, Francesco Tosoni, Tajammul Mustafa
 
 Pharmacy queues prototype:
-A simple portal where the local people can visualize the number of customers in the waiting line at a pharmacy
+A simple portal where the local people can visualize the number of customers in the waiting line at a pharmacy.
+Grab your phone, take a picture, upload it on the website, and the number of people waiting in queue is going
+to be automatically detected!
+
+Based on Flask, a small local DB and <a href="https://nanonets.com/"> Nanonetes' </a> API for people detection. 
 
 # Requirements:
-
-Python3.6+ (Python3.7 works as well)
+- Linux
+- Python3.6+ (Python3.7 works as well)
 
 # Installation:
 
 Install the requirements:
 
 ```bash
+cd map_frontend
 pip install -r requirements.txt
 ```
 

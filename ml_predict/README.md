@@ -12,3 +12,77 @@ pip install -r requirements.txt
 ./run_anonymizer_detector.sh
 
 This script is going to launch the anonymizer and subsequently the detector on the anonymizer's output images.
+
+# Azure
+
+How to install the dependencies for this anonymizer to run on a GPU: https://github.com/understand-ai/anonymizer
+
+1. Create a VM having Ubuntu 16.04 LTS installed as OS (required for the Nvidia 9.0 CUDA drivers)
+
+--> Personally, I used Azure Free Trial, and used the NC6_Promo Standard (6 virtual CPUs, 56 GBs of RAM) which is equipped
+with a Tesla K80 GPU.
+
+2. Follow the Tensorflow dependencies guidelines described at this page for tensorflow-gpu < 1.13.0 (we will need to use tensorflow-gpu 1.11.0
+with CUDA drivers 9.0):
+
+https://www.tensorflow.org/install/gpu
+
+Commands are also reported here:
+
+sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
+wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_9.1.85-1_amd64.deb
+sudo apt install ./cuda-repo-ubuntu1604_9.1.85-1_amd64.deb
+wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64/nvidia-machine-learning-repo-ubuntu1604_1.0.0-1_amd64.deb
+sudo apt install ./nvidia-machine-learning-repo-ubuntu1604_1.0.0-1_amd64.deb
+sudo apt update
+
+# Install the NVIDIA driver
+# Issue with driver install requires creating /usr/lib/nvidia
+sudo mkdir /usr/lib/nvidia
+sudo apt-get install --no-install-recommends nvidia-410
+# Reboot. Check that GPUs are visible using the command: nvidia-smi
+
+# Install CUDA and tools. Include optional NCCL 2.x
+sudo apt install cuda9.0 cuda-cublas-9-0 cuda-cufft-9-0 cuda-curand-9-0 \
+    cuda-cusolver-9-0 cuda-cusparse-9-0 libcudnn7=7.2.1.38-1+cuda9.0 \
+    libnccl2=2.2.13-1+cuda9.0 cuda-command-line-tools-9-0
+
+# Optional: Install the TensorRT runtime (must be after CUDA install)
+sudo apt update
+sudo apt install libnvinfer4=4.1.2-1+cuda9.0
+
+3. Install anaconda on the virtual machine to setup a python3.6 environment
+
+https://www.digitalocean.com/community/tutorials/how-to-install-anaconda-on-ubuntu-18-04-quickstart
+
+4. Close and re-open the shell or do:
+
+cd
+source .bashrc
+
+5. Create a new python environment:
+
+conda create -n anonymizer python=3.6
+
+6. Activate Python 	environment:
+
+conda activate anonymizer
+
+7. Install the python dependencies:
+
+cd anonymizer
+pip install -r requirements.txt
+
+8. Install the nvidia cuda compiler:
+
+sudo apt-get install nvidia-cuda-toolkit
+
+10. Create folders hosting weights and output images:
+
+mkdir weights
+mkdir output_images
+
+11. Run the script!
+
+PYTHONPATH=$PYTHONPATH:. python anonymizer/bin/anonymize.py --input ./images --image-output ./output_images --weights ./weights --image-extensions=jpg,tiff
+
