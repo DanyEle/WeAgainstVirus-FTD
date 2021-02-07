@@ -1,6 +1,13 @@
 # We Against Virus - TJ, DG, FT
 ### Authors: Daniele Gadler, Francesco Tosoni, Tajammul Mustafa
 
+###3rd place winners of the #WeAgainstVirus hackathon by "Hack the Alps" on 27th-28th March 2020. 
+
+[!weagainstvirus-header-cropped-3.png](We Against Virus)
+
+
+[!weagainstvirus-header-cropped-3.png][We Against virus]
+
 Pharmacy queues prototype:
 A simple portal where the local people can visualize the number of customers in the waiting line at a pharmacy.
 Grab your phone, take a picture, upload it on the website, and the number of people waiting in queue is going
