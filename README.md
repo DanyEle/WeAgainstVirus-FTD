@@ -1,4 +1,4 @@
-# We Against Virus - TJ, DG, FT
+# We Against Virus - PharmaQ - TJ, DG, FT
 ### Authors: Daniele Gadler, Francesco Tosoni, Tajammul Mustafa
 
 ### 3rd place winners of the #WeAgainstVirus hackathon by "Hack the Alps" on 27th-28th March 2020. 
