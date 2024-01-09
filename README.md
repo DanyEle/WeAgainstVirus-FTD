@@ -46,3 +46,10 @@ flask run --port 5001
 cd map_frontend
 flask run --port 5000
 ```
+
+## 3. Map's Frontend
+
+![Bolzano Pharmacies](./bolzano_pharmacies.png)
+
+
+
