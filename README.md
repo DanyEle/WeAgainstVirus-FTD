@@ -33,21 +33,28 @@ cp db_backend/test.db /tmp/test.db
 
 # Running:
 
-## 1. Run the DB application
+## 1. Run the ML pipeline
+
+Detect the number of people in queue at pharmacies based on the input images
+
+Go to https://github.com/DanyEle/WeAgainstVirus-FTD/tree/master/ml_predict for more details
+
+
+## 2. Run the DB application
 
 ```bash
 cd db_backend
 flask run --port 5001
 ```
 
-## 2. Run the Google Map application
+## 3. Run the Google Map application
 
 ```bash
 cd map_frontend
 flask run --port 5000
 ```
 
-## 3. Map's Frontend
+## 4. Map's Frontend
 
 ![Bolzano Pharmacies](./bolzano_pharmacies.png)
 
